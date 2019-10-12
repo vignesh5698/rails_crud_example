@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Rails Cheatsheet: 
+
+To generate controller: 
+  `rails g controller CONTROLLER_NAME`
+
+To generate Model: 
+  `rails g model TABLE_NAME FIELD_NAME: TYPE`

@@ -1,0 +1,9 @@
+<h2>Help</h2>
+<div>
+  <% @options.each do |option| %>
+    <%=
+    url = "help/#{option}"
+     link_to option, url 
+     %>
+  <% end %>
+</div>
