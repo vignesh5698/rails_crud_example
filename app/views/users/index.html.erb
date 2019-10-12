@@ -1,5 +1,8 @@
 <h1>Users</h1>
+<%= link_to 'Back', posts_path %>
+&nbsp;
 <%= link_to 'View all users', show_all_users_path %>
+<hr>
 <%= form_for :user, url: users_path do |f| %>
   <p>
     <%= f.label :name %><br>

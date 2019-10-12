@@ -1,3 +1,4 @@
+<%= link_to 'back', users_path %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -8,13 +9,18 @@
     </tr>
   </thead>
   <tbody>
-    <% @users.each do |user| %>
+  <% sortedUsers = @users.order("updated_at").reverse %>
+    <% sortedUsers.each do |user| %>
       <tr>
-        <td><%= @users.index(user)+1 %></td>
-        <td><%= user.name %></td>
+        <td><%= (sortedUsers.index(user)).to_i+1 %></td>
+        <td>
+          <%= link_to "#{user.name}", user_path(user.id) %>
+        </td>
         <td><%= user.age%></td>
         <td>
-          <%= link_to 'edit', edit_user_path(user), :class => 'btn btn-default' %>
+          <%= link_to 'edit', edit_user_path(user), :class => 'btn btn-default' %>/
+          <%= link_to 'delete', user_path(user), method: :delete, :class => 'btn btn-default' %>
+
         </td>
       </tr>
     <% end %>
